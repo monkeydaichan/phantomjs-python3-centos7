@@ -26,6 +26,9 @@ RUN git clone https://github.com/yyuu/pyenv.git $HOME/.pyenv
 RUN echo 'eval "$(pyenv init -)"' >> ~/.bashrc && \
     eval "$(pyenv init -)"
 
+#pip install 
+RUN curl -kL https://bootstrap.pypa.io/get-pip.py | python
+
 #python3.6.3 install & set default version
 RUN pyenv install 3.6.3 && \
     pyenv global 3.6.3
